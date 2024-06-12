@@ -23,3 +23,6 @@ install globally by running  ```npm install -g json-server```
 ### Start the server
 ```json-server --watch db.json --port 5000```
 
+This will open the server on ```http://localhost:5000/tasks```
+Essentially running a local ```db.json``` file located in the root of the project
+
