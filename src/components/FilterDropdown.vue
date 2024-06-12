@@ -1,11 +1,14 @@
 <template>
   <div class="relative flex items-center w-full px-4">
     <button
-      class="w-full flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-slate-700"
-      @click="toggleFilterModal"
-    >
-      Filter
-    </button>
+    class="relative w-full flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 border-2 border-gray-400 rounded-lg focus:outline-none"
+    @click="toggleFilterModal"
+  >
+    <span class="absolute inset-0 border-2 border-gray-300 rounded-lg"></span>
+    <span class="relative">Filter</span>
+  </button>
+  
+  
     <div v-if="show"
       class="absolute top-12 right-0 z-10 w-48 p-3 bg-white rounded-lg shadow"
     >

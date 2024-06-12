@@ -29,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in filteredItems" :key="item.id" class="border-b">
+        <tr v-for="item in filteredItems" :key="item.id" class="border-b" v-if="filteredItems.length > 0">
           <td class="px-4 py-3 font-medium text-gray-900">{{ item.id }}</td>
           <td class="px-4 py-3 font-medium text-gray-900">
             {{ item.user.name }}
@@ -43,6 +43,9 @@
             <a href="#" class="text-indigo-500 hover:underline">Details</a>
           </td>
           
+        </tr>
+        <tr v-else>
+          <td class="px-4 py-3">Sorry, there is no data</td>
         </tr>
       </tbody>
     </table>
@@ -93,6 +96,8 @@ const filteredItems = computed(() => {
             item.title.toLowerCase().includes(searchFilter.value) ||
             item.user.name.toLowerCase().includes(searchFilter.value)
         )
+
+        // console.log(items)
     }
     return items
 })
@@ -101,7 +106,7 @@ const handleSearch = (search) => {
     // console.log(search.toLowerCase())
     searchFilter.value = search.toLowerCase()
 
-    // console.log(searchFilter.value)
+    console.log(searchFilter.value)
 }
 
 const handleFilterRadios = (filter) => {
